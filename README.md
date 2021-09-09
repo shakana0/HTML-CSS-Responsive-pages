@@ -42,7 +42,7 @@ Koden kommer granskas ut följande punkter
 * Tydliga namngivningar
 * Väl användning av samtliga tekniker
 
-## Level Up
+## VG-Krav
 1. När man klickar på kartan ska den zoomas in (utan JS)
 1. Mjuk scrollning när man klickar på "Back to the top"
 1. Designa och lägg till sidorna offers.html och why_us.html
