@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .container {
@@ -9,12 +8,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
   overflow: hidden;
 }
 
 header {
   width: 100%;
+}
+header.header-home{
+  display: grid;
+  grid-template-areas: 
+  "introduction"
+  "nav-contact-menu"
+  "learn-more"
+  "join-today"
+  ;
+  grid-template-columns: 1fr;
 }
 
 .introduction {
@@ -22,6 +30,7 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
+  grid-area: introduction;
 }
 
 .introduction h1 {
@@ -63,7 +72,8 @@ button {
 
 img.family-img {
   height: 20rem;
-  align-self: center;
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 .learn-more {
@@ -74,6 +84,7 @@ img.family-img {
   width: 100%;
   padding: 10rem 0 10rem 0;
   background-color: #f17949;
+  grid-area: learn-more;
 }
 
 .learn-more p {
@@ -94,6 +105,7 @@ img.family-img {
   width: 100%;
   padding: 10rem 0 10rem 0;
   background-color: #fab131;
+  grid-area: join-today;
 }
 
 .join-today p {
@@ -106,9 +118,13 @@ img.family-img {
   font-size: 3rem;
 }
 
-.contact-menu-desktop a {
+nav.contact-menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav.contact-menu a {
   width: 50%;
-  height: 50%;
   padding: 2rem 0;
   text-decoration: none;
   text-align: center;
@@ -119,6 +135,10 @@ img.family-img {
   transition: 0.1s ease;
 }
 
+nav.contact-menu a:hover {
+  background-color: rgba(216, 213, 213, 0.801);
+  color: #000;
+}
 .financial-safety {
   background-color: #a9a19e;
   padding: 1rem 0 5rem 0;
@@ -227,6 +247,7 @@ article.about-us-text {
 .how-it-works h1 {
   font-size: 4rem;
   font-weight: 700;
+   padding-left: 6rem;
 }
 aside.how-it-works-steps {
   display: grid;
@@ -319,55 +340,6 @@ footer.home-mobile {
   font-size: 3rem;
   width: 300px;
   padding: 5rem 5rem 5rem 0;
-}
-
-nav.contact-menu {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-nav.contact-menu-mobile {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-nav.contact-menu-mobile a {
-  width: 50%;
-  height: 50%;
-  padding: 2rem 0;
-  text-decoration: none;
-  text-align: center;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 1.3rem;
-  color: rgba(128, 128, 128, 0.801);
-  font-weight: 700;
-  transition: 0.1s ease;
-}
-nav.contact-menu.contact-menu-desktop {
-  display: none;
-}
-nav.contact-menu {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-nav.contact-menu a {
-  width: 50%;
-  height: 50%;
-  padding: 2rem 0;
-  text-decoration: none;
-  text-align: center;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 1.3rem;
-  color: rgba(128, 128, 128, 0.801);
-  font-weight: 700;
-  transition: 0.1s ease;
-}
-
-a:hover {
-  background-color: rgba(216, 213, 213, 0.801);
-  color: #000;
 }
 
 main.main-contact {
@@ -468,14 +440,13 @@ footer.footer-map-container {
 }
 
 /*  Offers mobile version */
+
 article.offers-article {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
-/*  Offers mobile version */
 
 .introduction-offer-mobile {
   background-color: #c7ddea;
@@ -564,15 +535,15 @@ article.overview {
     margin: auto;
   }
 
+  img.family-img{
+    height: 25rem;
+    padding-right: 2rem;
+  }
+
   header.header-home {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-  }
-
-  img.family-img {
-    margin-top: 5rem;
   }
   .introduction {
     grid-column: 1 / 2;
@@ -586,41 +557,12 @@ article.overview {
   .join-today {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+  } 
+  nav.contact-menu{
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
   }
 
-  nav {
-    width: 100%;
-  }
-
-  nav.contact-menu.contact-menu-desktop {
-    display: block;
-    width: 100%;
-    height: 50%;
-    text-decoration: none;
-    text-align: center;
-    font-family: "Fira Sans", sans-serif;
-    font-size: 1.3rem;
-    color: rgba(128, 128, 128, 0.801);
-    font-weight: 700;
-    transition: 0.1s ease;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  nav.contact-menu.contact-menu-desktop a {
-    width: 20%;
-  }
-  nav.contact-menu-mobile {
-    display: none;
-  }
-
-  .contact-menu-desktop a {
-    width: 20%;
-  }
-  nav.contact-menu-desktop {
-    display: block;
-    display: flex;
-    justify-content: center;
-  }
   .text-section {
     padding: 2rem 0 10rem 0;
     display: flex;
@@ -738,14 +680,6 @@ article.overview {
     background-color: white;
     align-items: center;
     justify-content: center;
-  }
-
-  nav.contact-menu a {
-    width: 20%;
-  }
-
-  nav.contact-menu a:hover {
-    color: black;
   }
 
   .main-contact {
