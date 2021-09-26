@@ -4,7 +4,6 @@ body {
 }
 
 .container {
-  max-width: 414px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,12 +245,12 @@ article.about-us-text {
 .how-it-works h1 {
   font-size: 4rem;
   font-weight: 700;
-   padding-left: 6rem;
 }
 aside.how-it-works-steps {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
+  
 }
 aside.how-it-works-steps section {
   display: flex;
@@ -260,7 +259,7 @@ aside.how-it-works-steps section {
   position: relative;
 }
 
-section h2 {
+.how-it-works-steps section h2 {
   color: rgba(156, 156, 156, 0.767);
   font-size: 3.5rem;
   margin: 0.5rem;
@@ -268,7 +267,7 @@ section h2 {
   top: 10px;
   left: 10px;
 }
-section h3 {
+.offers-article section h2 {
   font-size: 1.7rem;
   color: rgb(65, 63, 63);
   padding: 0 20px;
@@ -278,6 +277,9 @@ section h3 {
 }
 .step-2 h2 {
   color: rgba(156, 156, 156, 0.767);
+}
+.step-3{
+  padding: 0 3.5rem
 }
 .step-4 {
   background-color: #f17949;
@@ -396,7 +398,6 @@ aside.come-visit-us {
   padding: 1.5rem 1.5rem 6rem 1.5rem;
   transform: translate(0, 50%);
   background-color: #fab131;
-  width: calc(100% - 6rem);
   z-index: 9;
 }
 
@@ -436,6 +437,7 @@ footer.footer-map-container {
   color: rgb(255, 123, 0);
   font-size: 5rem;
   margin-top: 8rem;
+  text-decoration: none;
 }
 
 /*  Offers mobile version */
