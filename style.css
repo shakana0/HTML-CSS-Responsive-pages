@@ -246,20 +246,21 @@ article.about-us-text {
   font-size: 4rem;
   font-weight: 700;
 }
-aside.how-it-works-steps {
+
+section.how-it-works-steps {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
   
 }
-aside.how-it-works-steps section {
+section.how-it-works-steps article {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.how-it-works-steps section h2 {
+.how-it-works-steps article h2 {
   color: rgba(156, 156, 156, 0.767);
   font-size: 3.5rem;
   margin: 0.5rem;
@@ -620,17 +621,17 @@ article.overview {
     justify-content: center;
   }
 
-  aside.how-it-works-steps {
+  section.how-it-works-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 
-  aside.how-it-works-steps section {
+  section.how-it-works-steps article {
     padding: 2rem;
   }
 
-  aside section:nth-child(even) {
+  section article:nth-child(even) {
     background-color: white;
   }
 
